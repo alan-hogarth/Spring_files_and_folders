@@ -17,7 +17,7 @@ public class Folder {
     @Column
     private String title;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name= "user_id", nullable = false)
     @JsonIgnoreProperties({"folder"})
     private User user;
@@ -33,6 +33,10 @@ public class Folder {
     }
 
     public Folder() {
+    }
+
+    public void addFiles(File file){
+        this.files.add(file);
     }
 
     public Long getId() {

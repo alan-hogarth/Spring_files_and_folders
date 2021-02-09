@@ -43,7 +43,13 @@ public class DataLoader implements ApplicationRunner {
         fileRepository.save(file1);
 
         File file2 = new File("budget", ".csv", 60, folder2);
+        fileRepository.save(file2);
 
+        folder2.addFiles(file2);
+        folderRepository.save(folder2);
+
+        folder1.addFiles(file1);
+        folderRepository.save(folder1);
 
     }
 }
