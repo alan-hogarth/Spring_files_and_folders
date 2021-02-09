@@ -17,7 +17,9 @@ public class Folder {
     @Column
     private String title;
 
-    @Column
+    @ManyToOne
+    @JoinColumn(name= "user_id", nullable = false)
+    @JsonIgnoreProperties({"folder"})
     private User user;
 
     @JsonIgnoreProperties({"folder"})
